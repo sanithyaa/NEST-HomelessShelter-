@@ -112,7 +112,7 @@ npm run dev
 Frontend runs at:
 
 http://localhost:3000
-🔐 Environment Variables
+Environment Variables
 
 Create .env file inside backend:
 
