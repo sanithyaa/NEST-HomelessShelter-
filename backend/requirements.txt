@@ -1,0 +1,28 @@
+# PyTorch with CUDA support (install this first)
+torch==2.5.1
+torchvision==0.20.1
+torchaudio==2.5.1
+transformers==4.36.0
+
+# Flask Core
+Flask==3.0.0
+Flask-CORS==4.0.0
+Flask-SocketIO==5.3.5
+python-socketio==5.10.0
+
+# Authentication
+Flask-JWT-Extended==4.5.3
+Werkzeug==3.0.1
+
+# Environment
+python-dotenv==1.0.0
+
+# Database (SQLite3 is built into Python)
+# No additional package needed for SQLite3
+
+# File handling (secure_filename is provided by Werkzeug)
+# No additional package needed
+
+# Optional: For production deployment
+gunicorn==21.2.0
+eventlet==0.33.3

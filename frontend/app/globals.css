@@ -1,0 +1,194 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html,
+  body {
+    @apply bg-cream text-deepbrown font-poppins min-h-screen;
+    transition: background-color 0.5s cubic-bezier(0.4, 0, 0.2, 1), 
+                color 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .dark {
+    @apply bg-dark-bg text-dark-text;
+  }
+
+  .dark body {
+    background-image: radial-gradient(circle at 20% 50%, rgba(176, 137, 104, 0.08) 0%, transparent 50%),
+                      radial-gradient(circle at 80% 80%, rgba(179, 106, 94, 0.08) 0%, transparent 50%);
+  }
+
+  ::selection {
+    @apply bg-amber text-white;
+  }
+
+  .dark ::selection {
+    @apply bg-amber text-dark-bg;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-amber text-white px-6 py-3 rounded-2xl font-medium hover:bg-brown 
+           transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105 
+           active:scale-95;
+  }
+
+  .dark .btn-primary {
+    @apply shadow-amber/20 hover:shadow-amber/30;
+  }
+
+  .btn-secondary {
+    @apply bg-deepbrown text-white px-6 py-3 rounded-2xl font-medium hover:bg-brown 
+           transition-all duration-300 hover:shadow-lg hover:scale-105 active:scale-95;
+  }
+
+  .dark .btn-secondary {
+    @apply bg-dark-surface hover:bg-dark-card border border-dark-border;
+  }
+
+  .card {
+    @apply bg-white rounded-2xl shadow-lg p-6 border border-beige 
+           transition-all duration-300;
+  }
+
+  .dark .card {
+    @apply bg-dark-card border-dark-border shadow-2xl shadow-black/40;
+  }
+
+  .input-field {
+    @apply w-full px-4 py-2 border border-beige rounded-2xl 
+           focus:outline-none focus:ring-2 focus:ring-amber focus:border-transparent
+           transition-all duration-200;
+  }
+
+  .dark .input-field {
+    @apply bg-dark-surface border-dark-border text-dark-text 
+           placeholder:text-dark-muted focus:ring-amber/50;
+  }
+
+  .input {
+    @apply w-full border border-beige dark:border-dark-border rounded-xl px-3 py-2 
+           focus:ring-2 focus:ring-brown dark:focus:ring-amber outline-none 
+           bg-white dark:bg-dark-surface text-deepbrown dark:text-dark-text
+           placeholder:text-brown/50 dark:placeholder:text-dark-muted
+           transition-all duration-200;
+  }
+}
+
+@layer utilities {
+  .animate-fade-in {
+    animation: fadeIn 0.3s ease-in-out;
+  }
+
+  .animate-pulse-slow {
+    animation: pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+
+  .animate-spin-slow {
+    animation: spin 3s linear infinite;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
+
+
+/* React Calendar Custom Styling for NEST */
+.nest-calendar {
+  background-color: transparent;
+  border-radius: 1rem;
+  border: none;
+  font-family: Poppins, sans-serif;
+  width: 100%;
+}
+
+.nest-calendar .react-calendar__navigation {
+  margin-bottom: 1rem;
+}
+
+.nest-calendar .react-calendar__navigation button {
+  color: #92400e;
+  font-weight: 600;
+  font-size: 1rem;
+  padding: 0.5rem;
+}
+
+.nest-calendar .react-calendar__navigation button:hover {
+  background-color: #f5e6d3;
+  border-radius: 0.5rem;
+}
+
+.nest-calendar .react-calendar__month-view__weekdays {
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: 0.75rem;
+  color: #78716c;
+}
+
+.nest-calendar .react-calendar__tile {
+  padding: 0.75rem 0.5rem;
+  border-radius: 0.5rem;
+  color: #44403c;
+  font-weight: 500;
+}
+
+.nest-calendar .react-calendar__tile:hover {
+  background-color: #fef7f0;
+}
+
+.nest-calendar .react-calendar__tile--active {
+  background: #d97706 !important;
+  color: white !important;
+  border-radius: 0.75rem;
+  font-weight: 600;
+}
+
+.nest-calendar .react-calendar__tile--now {
+  background: #fef7f0;
+  border: 2px solid #d97706;
+  font-weight: 600;
+}
+
+.nest-calendar .react-calendar__tile--now:hover {
+  background: #fef7f0;
+}
+
+/* Dark mode calendar styles */
+.dark .nest-calendar .react-calendar__navigation button {
+  color: #fef7f0;
+}
+
+.dark .nest-calendar .react-calendar__navigation button:hover {
+  background-color: #44403c;
+}
+
+.dark .nest-calendar .react-calendar__month-view__weekdays {
+  color: #a8a29e;
+}
+
+.dark .nest-calendar .react-calendar__tile {
+  color: #e7e5e4;
+}
+
+.dark .nest-calendar .react-calendar__tile:hover {
+  background-color: #44403c;
+}
+
+.dark .nest-calendar .react-calendar__tile--now {
+  background: #44403c;
+  border: 2px solid #d97706;
+}
+
+.dark .nest-calendar .react-calendar__tile--now:hover {
+  background: #44403c;
+}
